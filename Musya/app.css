@@ -1,0 +1,295 @@
+*{
+    /*hace que cuando se agrega margin o padding o borde a 
+    los elementos no crezcan más allá de tamaño dado. */
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+/*em tamaño relativo a la fuente*/
+h1{font-size: 3.5em;}
+h2{font-size: 2.7em;}
+h3{font-size: 2em;}
+p{font-size: 1.25em;}
+ul{list-style: none;}
+li{font-size: 1.25em;}
+
+button{/* 26:00*/
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: white;
+    background-color: blueviolet;
+}
+button:hover{
+    background-color: rgb(101, 33, 165);
+}
+
+.container{
+    max-width: 1400px;
+    margin:auto;
+}
+
+header{
+    background-color: rgb(245,245,245);
+}
+header .logo{
+    margin: 0;
+    padding: 25px 30px;
+
+    font-weight: bold;
+    color: blueviolet;
+    font-size: 1.6em;
+}
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+header a:hover{
+    color: blueviolet;
+}
+/* 35:31 */
+#principal{
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /*Capa obscura sobre la imagen */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("assets/heroGato.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#principal h1{
+    color: white;
+}
+
+#somos .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+
+#nuestros-consejos{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+}
+
+#nuestros-consejos .container{
+    padding: 150px 12px;
+}
+
+#nuestro-programas h2{
+    margin-top: 0;
+    font-size: 3.1em;
+}
+
+#nuestros-consejos p{
+    display: none;
+} /* 45:32*/
+#nuestros-consejos .consejo{
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.consejo:first-child{
+    background-image:linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("assets/gatoHigiene.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+.consejo:nth-child(2){
+    background-image:linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("assets/gatoAlimentacion.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+.consejo:nth-child(3){
+    background-image:linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("assets/GatoDiversion.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+/*+++++++++++++++++++++54:13 FORMULARIO++++++++++++++++++++++ */
+#mensaje{/*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+    text-align: center;
+
+    /*background-color: rgb(30,30,30); */
+    color:black;
+    height: 80vh;
+}
+#mensaje h2{
+    font-size: 9vw; /* Relativo a la pantalla*/
+}
+
+/*+++++++++++++++++++FOOTER++++++++++++++++++++++++++++++ */
+footer{
+    background-color: rgb(30,30,30);
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: white;
+}
+
+footer .container{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+/*++++++++++++++++++++++++FORMULARIO+++++++++++++++++++++++++++++++++ */
+form{
+    margin-top: 70px;
+    padding: 20px 8px; /*padding del formulario primero en Y luego X */
+    background-color: red;
+    /*min-width: 350px; */
+    border-radius: 7px;
+    box-sizing: border-box;
+    
+    background: rgba(50, 50, 50, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 0px;
+}
+input,textarea{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: none;
+}
+
+textarea{
+    min-height: 100px;
+    max-height: 150px;
+    max-width: 100%;
+}
+.btn-formulario{
+    background-color: rgb(101, 33, 165);
+    color: white;
+}
+
+/*Cuando el ancho de la pantalla supere los 720 */
+@media(min-width:720px){
+    header{
+        /* al usar position fixed, volver a usar width:100% */
+        position: fixed;
+        width: 100%;
+
+    }
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header nav{
+        padding: 0;
+        padding-right: 20px;
+        flex-direction: row;
+    }
+
+    #principal h1{
+        font-size: 5em;
+    }
+
+    #nuestros-consejos .consejos{
+        display: flex;
+        justify-content: center;
+        background-color: rgba(50, 50, 50, 1);
+    }
+
+    #nuestros-consejos p{
+        display: block;
+        margin-bottom: 30px;
+
+    }
+    #nuestro-consejos h2{
+        font-size: 4em;
+    }
+    #nuestros-consejos h3{
+        margin-top: 0;
+    }
+
+    #nuestros-consejos .consejo{
+        padding: 50px; /*
+        background-color: rgba(50, 50, 50, 1); */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    /*1:17:41 */
+    #mensaje{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    #mensaje h2{
+        font-size: 4em;
+    }
+
+    form{
+        box-sizing: border-box;
+        margin: auto;
+        width: 450px;
+        
+    }
+    .btn-formulario{
+        font-size: 1em;
+        font-weight: bolder;
+    }
+    footer{
+        margin-top: 100px;
+    }
+
+    
+    
+}
+
